@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mo Rizwan Khan | Portfolio</title>
+    <title>Mohammad Rizwan | Portfolio</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -12,22 +12,19 @@
     <style>
         /* --- 🎨 PROFESSIONAL THEME (Corporate Blue) --- */
         :root {
-            /* Backgrounds */
-            --bg-dark: #0f172a;       /* Deep Navy Slate (Hero/Footer) */
-            --bg-light: #f8fafc;      /* Very Light Grey (Body) */
-            --card-white: #ffffff;    /* Pure White (Cards) */
+            --bg-dark: #0f172a;       
+            --bg-light: #f8fafc;      
+            --card-white: #ffffff;    
             
-            /* Text Colors */
-            --text-light: #f1f5f9;    /* White/Light Grey text */
-            --text-dark: #1e293b;     /* Dark Slate text */
-            --text-muted: #64748b;    /* Muted Grey text */
+            --text-light: #f1f5f9;    
+            --text-dark: #1e293b;     
+            --text-muted: #64748b;    
             
-            /* Accent Colors */
-            --accent: #2563eb;        /* Royal Blue (Primary Action) */
-            --accent-hover: #1d4ed8;  /* Darker Blue (Hover) */
+            --accent: #2563eb;        
+            --accent-hover: #1d4ed8;  
+            --highlight-warning: #fbbf24;
             
-            /* Borders */
-            --border-color: #e2e8f0;  /* Light Border */
+            --border-color: #e2e8f0;
         }
 
         /* --- GLOBAL RESET --- */
@@ -37,6 +34,10 @@
             box-sizing: border-box;
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
+        }
+
+        html {
+            font-size: 16px; /* Base size */
         }
 
         body {
@@ -71,19 +72,21 @@
         .nav-links a { font-weight: 500; font-size: 0.95rem; color: #cbd5e1; opacity: 0.9; }
         .nav-links a:hover { opacity: 1; color: #fff; }
 
-        .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; color: #fff; z-index: 1001; }
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: #fff; z-index: 1001; }
 
         /* --- BUTTONS --- */
         .btn {
             display: inline-block; padding: 12px 28px; background-color: var(--accent);
             color: #ffffff; border-radius: 6px; font-weight: 600; border: none; transition: 0.3s; cursor: pointer;
             box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+            white-space: nowrap;
         }
         .btn:hover { background-color: var(--accent-hover); transform: translateY(-2px); }
 
         .btn-outline-light {
             display: inline-block; padding: 12px 28px; background: transparent;
             color: #ffffff; border: 1px solid rgba(255,255,255,0.3); border-radius: 6px; font-weight: 600;
+            white-space: nowrap;
         }
         .btn-outline-light:hover { background: rgba(255,255,255,0.1); border-color: #ffffff; }
 
@@ -91,25 +94,39 @@
         .hero {
             background-color: var(--bg-dark); color: var(--text-light);
             padding: 4rem 8% 6rem 8%; display: flex; align-items: center;
-            justify-content: space-between; gap: 3rem; min-height: 90vh;
+            justify-content: space-between; gap: 4rem; min-height: 90vh;
             position: relative; overflow: hidden;
         }
-        /* Geometric Pattern Background */
         .hero::before {
             content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
             background-size: 30px 30px; pointer-events: none; opacity: 0.5;
         }
 
-        .hero-text { flex: 1; max-width: 700px; z-index: 1; }
-        .hero h1 { font-size: 3rem; line-height: 1.1; font-weight: 800; margin-bottom: 1.5rem; letter-spacing: -1px; color: #fff; }
-        .hero h1 span { color: #60a5fa; /* Light Blue for contrast on dark bg */ }
+        .hero-text { flex: 1; max-width: 650px; z-index: 1; }
+        /* Fluid Typography using clamp */
+        .hero h1 { 
+            font-size: clamp(2rem, 5vw, 3.5rem); 
+            line-height: 1.1; 
+            font-weight: 800; 
+            margin-bottom: 1rem; 
+            letter-spacing: -1px; 
+            color: #fff; 
+        }
         
         .hero-intro { font-size: 1.15rem; color: #cbd5e1; margin-bottom: 2rem; font-weight: 400; line-height: 1.6; }
         
         .hero-highlights { display: flex; flex-direction: column; gap: 12px; margin-bottom: 2.5rem; }
         .highlight-item { display: flex; align-items: center; gap: 12px; font-weight: 500; font-size: 1.05rem; color: #e2e8f0; }
-        .highlight-item i { color: #60a5fa; } /* Light Blue Icons */
+        .highlight-item i { color: #60a5fa; } 
+
+        .visa-alert {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: rgba(251, 191, 36, 0.15); color: #fbbf24;
+            padding: 8px 16px; border-radius: 8px;
+            border: 1px solid rgba(251, 191, 36, 0.3); font-weight: 600;
+            width: fit-content;
+        }
 
         .btn-container { display: flex; gap: 15px; flex-wrap: wrap; }
 
@@ -120,22 +137,25 @@
         }
 
         /* --- SECTIONS --- */
-        .section { padding: 6rem 8%; background-color: var(--bg-light); }
+        .section { padding: 5rem 8%; background-color: var(--bg-light); }
         .section-header { margin-bottom: 3rem; }
         .section-label { color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; display: block; margin-bottom: 0.5rem; letter-spacing: 1px; }
         .section-title { font-size: 2.2rem; font-weight: 800; color: var(--text-dark); letter-spacing: -1px; }
 
         /* --- GRIDS & CARDS --- */
-        .grid-container, .skills-container, .why-hire-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .skills-container, .why-hire-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-
+        /* Responsive Grid: Adjusts columns automatically based on screen width */
+        .grid-container, .skills-container, .why-hire-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 2rem; 
+        }
+        
         .card, .skill-box, .why-card, .contact-box {
             background: var(--card-white); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color);
             transition: 0.3s ease; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); display: flex; flex-direction: column;
         }
         .card:hover, .skill-box:hover, .why-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border-color: #cbd5e1; }
 
-        /* Specific Card Styles */
         .skill-box h4 { font-size: 1rem; margin-bottom: 1rem; color: var(--text-dark); border-bottom: 2px solid #f1f5f9; padding-bottom: 5px; font-weight: 700; }
         .skill-list, .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; }
         .skill-tag, .tag { background: #eff6ff; color: #1e40af; padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; border: 1px solid #dbeafe; }
@@ -151,7 +171,11 @@
         
         .feature-list { list-style: none; color: var(--text-muted); margin-bottom: 1.5rem; flex-grow: 1; padding-left: 0; }
         .feature-list li { margin-bottom: 8px; font-size: 0.95rem; display: flex; align-items: start; gap: 8px; }
-        .feature-list li::before { content: "•"; color: var(--accent); font-weight: bold; }
+        .feature-list li::before { content: "•"; color: var(--accent); font-weight: bold; margin-right: 5px; }
+        
+        .card-header-row { display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem; }
+        .year-badge { background: #f1f5f9; color: #64748b; font-size: 0.8rem; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+
         .card-link { font-weight: 600; color: var(--accent); display: inline-flex; align-items: center; gap: 5px; }
         .card-link:hover { text-decoration: underline; }
 
@@ -178,9 +202,19 @@
 
         footer { background-color: var(--bg-dark); color: #94a3b8; text-align: center; padding: 4rem 2rem; border-top: 1px solid rgba(255,255,255,0.05); }
 
-        /* --- 📱 MOBILE OPTIMIZATIONS --- */
-        @media (max-width: 968px) {
+        /* --- 📱 MOBILE & TABLET OPTIMIZATIONS (The key to "Har size ki device") --- */
+        
+        /* Tablet & Small Laptops (Max Width 1024px) */
+        @media (max-width: 1024px) {
             .navbar { padding: 1.2rem 5%; }
+            .section { padding: 4rem 5%; }
+            .hero { padding: 4rem 5%; gap: 2rem; }
+            .profile-img { width: 240px; height: 240px; }
+            .grid-container { gap: 1.5rem; }
+        }
+
+        /* Tablets & Large Phones (Max Width 768px) */
+        @media (max-width: 768px) {
             .menu-toggle { display: block; }
             .nav-links {
                 display: none; position: absolute; top: 100%; left: 0; width: 100%;
@@ -189,20 +223,36 @@
                 box-shadow: 0 10px 10px rgba(0,0,0,0.3); max-height: 60vh; overflow-y: auto;
             }
             .nav-links.active { display: flex; }
+            /* Hide CV button in header on mobile to save space */
             .navbar > .btn { display: none; }
+            /* Show CV button inside menu on mobile */
             .nav-links .nav-btn { display: inline-block; margin-top: 10px; width: 100%; text-align: center; }
 
-            .hero { padding: 3rem 5%; flex-direction: column-reverse; text-align: center; justify-content: center; }
-            .hero-text { margin-top: 1.5rem; align-items: center; display: flex; flex-direction: column; }
-            .hero h1 { font-size: 2.2rem; }
+            .hero { flex-direction: column-reverse; text-align: center; justify-content: center; padding-top: 2rem; }
+            .hero-text { margin-top: 1.5rem; width: 100%; }
             .hero-highlights { align-items: center; }
-            .btn-container { flex-direction: column; width: 100%; }
-            .btn, .btn-outline-light { width: 100%; text-align: center; }
-            .hero-img-container { width: 100%; }
-            .profile-img { width: 220px; height: 220px; }
+            .btn-container { justify-content: center; width: 100%; }
+            .hero-img-container { width: 100%; margin-bottom: 1rem; }
+            .profile-img { width: 200px; height: 200px; }
             
-            .section { padding: 4rem 5%; }
-            .split-section { grid-template-columns: 1fr; gap: 2rem; }
+            .split-section { grid-template-columns: 1fr; gap: 3rem; }
+            .section-title { font-size: 1.8rem; }
+        }
+
+        /* Small Mobile Phones (Max Width 480px) */
+        @media (max-width: 480px) {
+            .section { padding: 3rem 1.5rem; }
+            .hero h1 { font-size: 2rem; } 
+            
+            .btn-container { flex-direction: column; }
+            .btn, .btn-outline-light { width: 100%; text-align: center; }
+            
+            /* Make grid 1 column on very small screens */
+            .grid-container, .skills-container, .why-hire-grid { 
+                grid-template-columns: 1fr; 
+            }
+            
+            .card { padding: 1.5rem; }
             .cert-img { width: 100%; }
         }
     </style>
@@ -210,7 +260,7 @@
 <body>
 
     <nav class="navbar" id="navbar">
-        <div class="logo">Rizwan.</div>
+        <div class="logo">Mohammad.</div>
         
         <div class="menu-toggle" id="mobile-menu">
             <i class="fas fa-bars"></i>
@@ -222,24 +272,33 @@
             <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
             <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
             <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-            <li><a href="my-cv.pdf" download class="btn nav-btn" style="padding:10px; margin-top:5px; color:#fff;">Download CV</a></li>
+            <li><a href="mycv.pdf" download class="btn nav-btn" style="padding:10px; margin-top:5px; color:#fff;">Download CV</a></li>
         </ul>
         
-        <a href="my-cv.pdf" download class="btn" style="padding: 8px 20px; font-size: 0.9rem; display: none;">Download CV</a>
-        <style> @media(min-width: 969px) { .navbar > .btn { display: inline-block !important; } .nav-links .nav-btn { display: none !important; } } </style>
+        <a href="mycv.pdf" download class="btn" style="padding: 8px 20px; font-size: 0.9rem; display: none;">Download CV</a>
+        <style> @media(min-width: 769px) { .navbar > .btn { display: inline-block !important; } .nav-links .nav-btn { display: none !important; } } </style>
     </nav>
 
     <section class="hero">
         <div class="hero-text">
-            <h1>Software Developer & <br><span>IT Support Specialist</span></h1>
+            <h1>Hi, I'm <span style="color:#60a5fa">Mohammad Rizwan</span></h1>
+            <h2 style="font-size: 1.8rem; margin-bottom:1rem; color:#e2e8f0; font-weight:700;">Software Developer</h2>
+            
             <p class="hero-intro">
-                Hi, I'm <strong>Mo Rizwan Khan</strong>, a skilled developer with expertise in building scalable MERN applications and supporting IT operations. Currently pursuing my MCA.
+                A skilled developer with expertise in building scalable MERN applications and supporting IT operations. Currently pursuing my MCA.
             </p>
+            
             <div class="hero-highlights">
                 <div class="highlight-item"><i class="fas fa-map-marker-alt"></i> Based in Sharjah, UAE</div>
-                <div class="highlight-item"><i class="fas fa-circle" style="font-size: 0.8rem; color:#4ade80"></i> Immediate Joiner</div>
-                <div class="highlight-item"><i class="fas fa-briefcase"></i> Open to Development & Technical Support Roles</div>
+                
+                <div class="visa-alert">
+                    <i class="fas fa-passport"></i> 
+                    Visit Visa Status: Expires 3rd April
+                </div>
+
+                <div class="highlight-item"><i class="fas fa-bolt" style="color:#4ade80"></i> Immediate Joiner</div>
             </div>
+
             <div class="btn-container">
                 <a href="#projects" class="btn">View Portfolio</a>
                 <a href="#contact" class="btn-outline-light">Contact Me</a>
@@ -247,7 +306,7 @@
         </div>
         
         <div class="hero-img-container">
-            <img src="profile.png" alt="Mo Rizwan Khan" class="profile-img">
+            <img src="profile.png" alt="Mohammad Rizwan" class="profile-img">
         </div>
     </section>
 
@@ -336,51 +395,62 @@
         <div class="section-header">
             <span class="section-label">Portfolio</span>
             <h2 class="section-title">Project Experience</h2>
-            <p style="color:#64748b">Fresher / Project Based Learning</p>
+            <p style="color:#64748b">Project Based Learning</p>
         </div>
 
         <div class="grid-container">
             <div class="card">
-                <div class="card-icon"><i class="fas fa-utensils"></i></div>
-                <h3>Food Order System</h3>
-                <span class="role-tag">Full-Stack Developer</span>
+                <div class="card-header-row">
+                    <div class="card-icon" style="margin-bottom:0.5rem;"><i class="fas fa-utensils"></i></div>
+                    <span class="year-badge">2024</span>
+                </div>
+                <h3>Food Order Platform</h3>
+                <span class="role-tag">Full Stack Project | MERN Stack</span>
                 <ul class="feature-list">
-                    <li>Developed full MERN stack application</li>
-                    <li>Integrated Auth0 for user security</li>
-                    <li>Implemented Stripe payment gateway</li>
+                    <li>Developed a MERN-based food ordering platform with authentication, cart, orders, and Stripe payments.</li>
+                    <li>Built a fully responsive UI with secure backend APIs.</li>
                 </ul>
                 <a href="https://github.com/MoRizwanAMU" target="_blank" class="card-link">View Code <i class="fas fa-arrow-right"></i></a>
             </div>
+
             <div class="card">
-                <div class="card-icon"><i class="fas fa-hotel"></i></div>
-                <h3>Hotel Mgmt System</h3>
-                <span class="role-tag">Backend + API</span>
+                <div class="card-header-row">
+                    <div class="card-icon" style="margin-bottom:0.5rem;"><i class="fas fa-hotel"></i></div>
+                    <span class="year-badge">2024</span>
+                </div>
+                <h3>Hotel Listing App</h3>
+                <span class="role-tag">Full Stack Project | Node.js, MongoDB</span>
                 <ul class="feature-list">
-                    <li>Built robust REST APIs with Node/Express</li>
-                    <li>Managed complex booking logic in MongoDB</li>
-                    <li>Automated bill generation features</li>
+                    <li>Developed a hotel listing web application with property details and image uploads.</li>
+                    <li>Built backend APIs using Node.js and managed data storage with MongoDB.</li>
                 </ul>
                 <a href="https://github.com/MoRizwanAMU" target="_blank" class="card-link">View Code <i class="fas fa-arrow-right"></i></a>
             </div>
+
             <div class="card">
-                <div class="card-icon"><i class="fas fa-book"></i></div>
-                <h3>Library System</h3>
-                <span class="role-tag">Full-Stack</span>
+                <div class="card-header-row">
+                    <div class="card-icon" style="margin-bottom:0.5rem;"><i class="fas fa-sticky-note"></i></div>
+                    <span class="year-badge">2026</span>
+                </div>
+                <h3>Notezy</h3>
+                <span class="role-tag">MERN Stack Notes Application</span>
                 <ul class="feature-list">
-                    <li>CRUD operations for book inventory</li>
-                    <li>Tracked student issue/return dates</li>
-                    <li>Implemented advanced search filters</li>
+                    <li>Developed a MERN-based notes application to manage vehicle details, wiring information, repair notes, and due records.</li>
+                    <li>Designed the app for an auto electrician use case to store service history and maintenance details.</li>
                 </ul>
                 <a href="https://github.com/MoRizwanAMU" target="_blank" class="card-link">View Code <i class="fas fa-arrow-right"></i></a>
             </div>
-             <div class="card">
-                <div class="card-icon"><i class="fas fa-robot"></i></div>
-                <h3>Notezy AI</h3>
-                <span class="role-tag">Frontend + AI</span>
+
+            <div class="card">
+                <div class="card-header-row">
+                    <div class="card-icon" style="margin-bottom:0.5rem;"><i class="fas fa-laptop-code"></i></div>
+                    <span class="year-badge">2025</span>
+                </div>
+                <h3>Portfolio Website</h3>
+                <span class="role-tag">Personal Project | Frontend Development</span>
                 <ul class="feature-list">
-                    <li>Integrated OpenAI API for content gen</li>
-                    <li>Extracts & summarizes YouTube videos</li>
-                    <li>Modern UI with React & Tailwind</li>
+                    <li>Designed and developed a responsive personal portfolio website to showcase projects, skills, and professional experience.</li>
+                    <li>Implemented modern UI using React, HTML5/CSS3, Tailwind CSS, and Bootstrap, with focus on performance and clean layout.</li>
                 </ul>
                 <a href="https://github.com/MoRizwanAMU" target="_blank" class="card-link">View Code <i class="fas fa-arrow-right"></i></a>
             </div>
@@ -394,34 +464,19 @@
         </div>
 
         <div class="grid-container">
-             <div class="card">
-                <div class="card-icon"><i class="fas fa-briefcase"></i></div>
-                <h3>Frontend Development Intern</h3>
-                <span class="role-tag">Codesoft | 2024</span>
-                <div class="tech-tags">
-                     <span class="tag">HTML/CSS</span><span class="tag">JavaScript</span><span class="tag">React.js</span><span class="tag">Git</span>
+            <div class="card">
+                <div class="card-header-row">
+                    <div class="card-icon" style="margin-bottom:0.5rem;"><i class="fas fa-briefcase"></i></div>
+                    <span class="year-badge">2024</span>
                 </div>
+                <h3>Frontend Dev Intern</h3>
+                <span class="role-tag">CodeSoft | Remote</span>
                 <ul class="feature-list">
-                    <li>Built reusable UI components & optimized layouts.</li>
-                    <li>Developed React.js modules & enhanced logic.</li>
-                    <li>Debugged UI issues & optimized performance.</li>
-                    <li>Collaborated using Git/GitHub.</li>
+                    <li>Developed multiple frontend projects including a calculator, landing page, and personal portfolio using HTML, CSS, and JavaScript.</li>
+                    <li>Implemented responsive layouts and improved UI structure across different screen sizes.</li>
+                    <li>Practiced version control and project management using Git and GitHub.</li>
                 </ul>
-             </div>
-             <div class="card">
-                <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
-                <h3>Frontend Development Intern</h3>
-                <span class="role-tag">Prodigy Infotech | 2024</span>
-                <div class="tech-tags">
-                     <span class="tag">JavaScript</span><span class="tag">DOM</span><span class="tag">React.js</span><span class="tag">APIs</span>
-                </div>
-                <ul class="feature-list">
-                    <li>Built interactive pages with DOM manipulation.</li>
-                    <li>Integrated APIs & displayed real-time data.</li>
-                    <li>Followed clean coding patterns & optimization.</li>
-                    <li>Implemented responsive layouts.</li>
-                </ul>
-             </div>
+            </div>
         </div>
     </section>
 
@@ -477,8 +532,8 @@
                 </div>
                 
                 <div class="edu-item">
-                    <h4>Master of Computer Applications (MCA)</h4>
-                    <span>Aligarh Muslim University | 2023 – 2026</span>
+                    <h4>Master of Computer Applications (MCA) — Coursework Completed</h4>
+                    <span>Aligarh Muslim University | 2023 – 2025</span>
                     <p>Focus on Software Development, Programming, and IT Infrastructure.</p>
                 </div>
                 
@@ -504,8 +559,8 @@
                 <div class="contact-box">
                     <i class="fab fa-whatsapp"></i>
                     <div>
-                        <h5>WhatsApp</h5>
-                        <a href="https://wa.me/917275061767" target="_blank">+91 7275061767</a>
+                        <h5>WhatsApp / Phone</h5>
+                        <a href="https://wa.me/971547515315" target="_blank">+971 54 751 5315</a>
                     </div>
                 </div>
                 <div class="contact-box">
@@ -516,7 +571,7 @@
                     </div>
                 </div>
                 <div style="margin-top: 2rem;">
-                     <a href="my-cv.pdf" download class="btn" style="width:100%; text-align:center;">Download Full CV (PDF)</a>
+                     <a href="mycv.pdf" download class="btn" style="width:100%; text-align:center;">Download Full CV (PDF)</a>
                 </div>
             </div>
         </div>
@@ -524,7 +579,7 @@
 
     <footer>
         <h2 style="color:white; margin-bottom:1rem;">Ready to build something amazing?</h2>
-        <p>&copy; 2025 Mo Rizwan Khan. All rights reserved.</p>
+        <p>&copy; 2025 Mohammad Rizwan. All rights reserved.</p>
     </footer>
 
     <script>
