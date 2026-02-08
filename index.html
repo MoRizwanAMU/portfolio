@@ -12,19 +12,23 @@
     <style>
         /* --- 🎨 PROFESSIONAL THEME (Corporate Blue) --- */
         :root {
-            --bg-dark: #0f172a;       
-            --bg-light: #f8fafc;      
-            --card-white: #ffffff;    
+            /* Backgrounds */
+            --bg-dark: #0f172a;       /* Deep Navy Slate (Hero/Footer) */
+            --bg-light: #f8fafc;      /* Very Light Grey (Body) */
+            --card-white: #ffffff;    /* Pure White (Cards) */
             
-            --text-light: #f1f5f9;    
-            --text-dark: #1e293b;     
-            --text-muted: #64748b;    
+            /* Text Colors */
+            --text-light: #f1f5f9;    /* White/Light Grey text */
+            --text-dark: #1e293b;     /* Dark Slate text */
+            --text-muted: #64748b;    /* Muted Grey text */
             
-            --accent: #2563eb;        
-            --accent-hover: #1d4ed8;  
-            --highlight-warning: #fbbf24;
+            /* Accent Colors */
+            --accent: #2563eb;        /* Royal Blue (Primary Action) */
+            --accent-hover: #1d4ed8;  /* Darker Blue (Hover) */
+            --highlight-warning: #fbbf24; /* Yellow for Visa Status */
             
-            --border-color: #e2e8f0;
+            /* Borders */
+            --border-color: #e2e8f0;  /* Light Border */
         }
 
         /* --- GLOBAL RESET --- */
@@ -34,10 +38,6 @@
             box-sizing: border-box;
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
-        }
-
-        html {
-            font-size: 16px; /* Base size */
         }
 
         body {
@@ -72,60 +72,84 @@
         .nav-links a { font-weight: 500; font-size: 0.95rem; color: #cbd5e1; opacity: 0.9; }
         .nav-links a:hover { opacity: 1; color: #fff; }
 
-        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: #fff; z-index: 1001; }
+        .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; color: #fff; z-index: 1001; }
 
         /* --- BUTTONS --- */
         .btn {
             display: inline-block; padding: 12px 28px; background-color: var(--accent);
             color: #ffffff; border-radius: 6px; font-weight: 600; border: none; transition: 0.3s; cursor: pointer;
             box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
-            white-space: nowrap;
         }
         .btn:hover { background-color: var(--accent-hover); transform: translateY(-2px); }
 
         .btn-outline-light {
             display: inline-block; padding: 12px 28px; background: transparent;
             color: #ffffff; border: 1px solid rgba(255,255,255,0.3); border-radius: 6px; font-weight: 600;
-            white-space: nowrap;
         }
         .btn-outline-light:hover { background: rgba(255,255,255,0.1); border-color: #ffffff; }
+
+        /* --- SOCIAL ICONS --- */
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .social-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #cbd5e1;
+            font-size: 1.4rem;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .social-btn:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
 
         /* --- HERO SECTION --- */
         .hero {
             background-color: var(--bg-dark); color: var(--text-light);
             padding: 4rem 8% 6rem 8%; display: flex; align-items: center;
-            justify-content: space-between; gap: 4rem; min-height: 90vh;
+            justify-content: space-between; gap: 3rem; min-height: 90vh;
             position: relative; overflow: hidden;
         }
+        /* Geometric Pattern Background */
         .hero::before {
             content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
             background-size: 30px 30px; pointer-events: none; opacity: 0.5;
         }
 
-        .hero-text { flex: 1; max-width: 650px; z-index: 1; }
-        /* Fluid Typography using clamp */
-        .hero h1 { 
-            font-size: clamp(2rem, 5vw, 3.5rem); 
-            line-height: 1.1; 
-            font-weight: 800; 
-            margin-bottom: 1rem; 
-            letter-spacing: -1px; 
-            color: #fff; 
-        }
+        .hero-text { flex: 1; max-width: 700px; z-index: 1; }
+        .hero h1 { font-size: 3rem; line-height: 1.1; font-weight: 800; margin-bottom: 1.5rem; letter-spacing: -1px; color: #fff; }
+        .hero h1 span { color: #60a5fa; /* Light Blue for contrast on dark bg */ }
         
         .hero-intro { font-size: 1.15rem; color: #cbd5e1; margin-bottom: 2rem; font-weight: 400; line-height: 1.6; }
         
         .hero-highlights { display: flex; flex-direction: column; gap: 12px; margin-bottom: 2.5rem; }
+        
         .highlight-item { display: flex; align-items: center; gap: 12px; font-weight: 500; font-size: 1.05rem; color: #e2e8f0; }
-        .highlight-item i { color: #60a5fa; } 
+        .highlight-item i { color: #60a5fa; } /* Light Blue Icons */
 
+        /* Visa Alert Style */
         .visa-alert {
-            display: inline-flex; align-items: center; gap: 10px;
-            background: rgba(251, 191, 36, 0.15); color: #fbbf24;
-            padding: 8px 16px; border-radius: 8px;
-            border: 1px solid rgba(251, 191, 36, 0.3); font-weight: 600;
-            width: fit-content;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(251, 191, 36, 0.15); /* Yellow Tint */
+            color: #fbbf24; /* Warning Yellow */
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            font-weight: 600;
         }
 
         .btn-container { display: flex; gap: 15px; flex-wrap: wrap; }
@@ -137,25 +161,22 @@
         }
 
         /* --- SECTIONS --- */
-        .section { padding: 5rem 8%; background-color: var(--bg-light); }
+        .section { padding: 6rem 8%; background-color: var(--bg-light); }
         .section-header { margin-bottom: 3rem; }
         .section-label { color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; display: block; margin-bottom: 0.5rem; letter-spacing: 1px; }
         .section-title { font-size: 2.2rem; font-weight: 800; color: var(--text-dark); letter-spacing: -1px; }
 
         /* --- GRIDS & CARDS --- */
-        /* Responsive Grid: Adjusts columns automatically based on screen width */
-        .grid-container, .skills-container, .why-hire-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 2rem; 
-        }
-        
+        .grid-container, .skills-container, .why-hire-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .skills-container, .why-hire-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
         .card, .skill-box, .why-card, .contact-box {
             background: var(--card-white); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color);
             transition: 0.3s ease; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); display: flex; flex-direction: column;
         }
         .card:hover, .skill-box:hover, .why-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border-color: #cbd5e1; }
 
+        /* Specific Card Styles */
         .skill-box h4 { font-size: 1rem; margin-bottom: 1rem; color: var(--text-dark); border-bottom: 2px solid #f1f5f9; padding-bottom: 5px; font-weight: 700; }
         .skill-list, .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; }
         .skill-tag, .tag { background: #eff6ff; color: #1e40af; padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; border: 1px solid #dbeafe; }
@@ -171,7 +192,7 @@
         
         .feature-list { list-style: none; color: var(--text-muted); margin-bottom: 1.5rem; flex-grow: 1; padding-left: 0; }
         .feature-list li { margin-bottom: 8px; font-size: 0.95rem; display: flex; align-items: start; gap: 8px; }
-        .feature-list li::before { content: "•"; color: var(--accent); font-weight: bold; margin-right: 5px; }
+        .feature-list li::before { content: "•"; color: var(--accent); font-weight: bold; }
         
         .card-header-row { display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem; }
         .year-badge { background: #f1f5f9; color: #64748b; font-size: 0.8rem; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
@@ -200,21 +221,40 @@
         .contact-box div h5 { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
         .contact-box div a { font-size: 1rem; color: var(--text-dark); font-weight: 600; word-break: break-all; }
 
-        footer { background-color: var(--bg-dark); color: #94a3b8; text-align: center; padding: 4rem 2rem; border-top: 1px solid rgba(255,255,255,0.05); }
-
-        /* --- 📱 MOBILE & TABLET OPTIMIZATIONS (The key to "Har size ki device") --- */
-        
-        /* Tablet & Small Laptops (Max Width 1024px) */
-        @media (max-width: 1024px) {
-            .navbar { padding: 1.2rem 5%; }
-            .section { padding: 4rem 5%; }
-            .hero { padding: 4rem 5%; gap: 2rem; }
-            .profile-img { width: 240px; height: 240px; }
-            .grid-container { gap: 1.5rem; }
+        /* --- TOAST NOTIFICATION --- */
+        #toast {
+            visibility: hidden;
+            min-width: 300px;
+            margin-left: -150px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1002;
+            left: 50%;
+            bottom: 30px;
+            font-size: 16px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
         }
 
-        /* Tablets & Large Phones (Max Width 768px) */
-        @media (max-width: 768px) {
+        #toast.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @-webkit-keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+        @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+        @-webkit-keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+        @keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+
+        footer { background-color: var(--bg-dark); color: #94a3b8; text-align: center; padding: 4rem 2rem; border-top: 1px solid rgba(255,255,255,0.05); }
+
+        /* --- 📱 MOBILE OPTIMIZATIONS --- */
+        @media (max-width: 968px) {
+            .navbar { padding: 1.2rem 5%; }
             .menu-toggle { display: block; }
             .nav-links {
                 display: none; position: absolute; top: 100%; left: 0; width: 100%;
@@ -223,41 +263,28 @@
                 box-shadow: 0 10px 10px rgba(0,0,0,0.3); max-height: 60vh; overflow-y: auto;
             }
             .nav-links.active { display: flex; }
-            /* Hide CV button in header on mobile to save space */
             .navbar > .btn { display: none; }
-            /* Show CV button inside menu on mobile */
             .nav-links .nav-btn { display: inline-block; margin-top: 10px; width: 100%; text-align: center; }
 
-            .hero { flex-direction: column-reverse; text-align: center; justify-content: center; padding-top: 2rem; }
-            .hero-text { margin-top: 1.5rem; width: 100%; }
+            .hero { padding: 3rem 5%; flex-direction: column-reverse; text-align: center; justify-content: center; }
+            .hero-text { margin-top: 1.5rem; align-items: center; display: flex; flex-direction: column; }
+            .hero h1 { font-size: 2.2rem; }
             .hero-highlights { align-items: center; }
-            .btn-container { justify-content: center; width: 100%; }
-            .hero-img-container { width: 100%; margin-bottom: 1rem; }
-            .profile-img { width: 200px; height: 200px; }
-            
-            .split-section { grid-template-columns: 1fr; gap: 3rem; }
-            .section-title { font-size: 1.8rem; }
-        }
-
-        /* Small Mobile Phones (Max Width 480px) */
-        @media (max-width: 480px) {
-            .section { padding: 3rem 1.5rem; }
-            .hero h1 { font-size: 2rem; } 
-            
-            .btn-container { flex-direction: column; }
+            .social-icons { justify-content: center; }
+            .btn-container { flex-direction: column; width: 100%; }
             .btn, .btn-outline-light { width: 100%; text-align: center; }
+            .hero-img-container { width: 100%; }
+            .profile-img { width: 220px; height: 220px; }
             
-            /* Make grid 1 column on very small screens */
-            .grid-container, .skills-container, .why-hire-grid { 
-                grid-template-columns: 1fr; 
-            }
-            
-            .card { padding: 1.5rem; }
+            .section { padding: 4rem 5%; }
+            .split-section { grid-template-columns: 1fr; gap: 2rem; }
             .cert-img { width: 100%; }
         }
     </style>
 </head>
 <body>
+
+    <div id="toast">Downloading... 🚀</div>
 
     <nav class="navbar" id="navbar">
         <div class="logo">Mohammad.</div>
@@ -272,11 +299,11 @@
             <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
             <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
             <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-            <li><a href="mycv.pdf" download class="btn nav-btn" style="padding:10px; margin-top:5px; color:#fff;">Download CV</a></li>
+            <li><a href="#contact" onclick="closeMenu()" class="btn nav-btn" style="padding:10px; margin-top:5px; color:#fff;">Download CVs</a></li>
         </ul>
         
-        <a href="mycv.pdf" download class="btn" style="padding: 8px 20px; font-size: 0.9rem; display: none;">Download CV</a>
-        <style> @media(min-width: 769px) { .navbar > .btn { display: inline-block !important; } .nav-links .nav-btn { display: none !important; } } </style>
+        <a href="#contact" class="btn" style="padding: 8px 20px; font-size: 0.9rem; display: none;">Download CVs</a>
+        <style> @media(min-width: 969px) { .navbar > .btn { display: inline-block !important; } .nav-links .nav-btn { display: none !important; } } </style>
     </nav>
 
     <section class="hero">
@@ -297,6 +324,15 @@
                 </div>
 
                 <div class="highlight-item"><i class="fas fa-bolt" style="color:#4ade80"></i> Immediate Joiner</div>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://github.com/MoRizwanAMU" target="_blank" class="social-btn">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/mohammad-rizwan-khan-ab7797390/" target="_blank" class="social-btn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
             </div>
 
             <div class="btn-container">
@@ -399,6 +435,7 @@
         </div>
 
         <div class="grid-container">
+            
             <div class="card">
                 <div class="card-header-row">
                     <div class="card-icon" style="margin-bottom:0.5rem;"><i class="fas fa-utensils"></i></div>
@@ -454,6 +491,7 @@
                 </ul>
                 <a href="https://github.com/MoRizwanAMU" target="_blank" class="card-link">View Code <i class="fas fa-arrow-right"></i></a>
             </div>
+
         </div>
     </section>
 
@@ -570,9 +608,17 @@
                         <a href="mailto:mo.rizwan.mca.amu@gmail.com">mo.rizwan.mca.amu@gmail.com</a>
                     </div>
                 </div>
-                <div style="margin-top: 2rem;">
-                     <a href="mycv.pdf" download class="btn" style="width:100%; text-align:center;">Download Full CV (PDF)</a>
+                
+                <div style="margin-top: 2rem; display: flex; flex-direction: column; align-items: center; gap: 15px;">
+                     <a href="Mohammad_Rizwan_Khan_full_stack_development%20-%20Copy.pdf" download class="btn" onclick="showToast('Full Stack Development CV Downloaded 🚀')" style="width:100%; max-width:400px; text-align:center; display:flex; align-items:center; justify-content:center; gap:10px;">
+                        Full Stack Development
+                     </a>
+                     
+                     <a href="Mohammad_Rizwan_Khan_IT_Support_Office_Admin%20-%20Copy.pdf" download class="btn" onclick="showToast('IT Support-OFFICE ADMINISTRATOR CV Downloaded 🚀')" style="width:100%; max-width:400px; text-align:center; display:flex; align-items:center; justify-content:center; gap:10px;">
+                        IT Support-OFFICE ADMINISTRATOR
+                     </a>
                 </div>
+                
             </div>
         </div>
     </section>
@@ -612,6 +658,14 @@
                 navList.classList.remove('active');
             }
         });
+
+        // Toast Notification Function
+        function showToast(message) {
+            var x = document.getElementById("toast");
+            x.textContent = message;
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }
     </script>
 
 </body>
