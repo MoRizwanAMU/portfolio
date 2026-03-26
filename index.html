@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammad Rizwan | IT Professional</title>
+    <title>Mohammad Rizwan | IT Professional & Developer</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -12,23 +12,20 @@
     <style>
         /* --- 🎨 PROFESSIONAL THEME (Corporate Blue) --- */
         :root {
-            /* Backgrounds */
-            --bg-dark: #0f172a;       /* Deep Navy Slate (Hero/Footer) */
-            --bg-light: #f8fafc;      /* Very Light Grey (Body) */
-            --card-white: #ffffff;    /* Pure White (Cards) */
+            --bg-dark: #0f172a;       
+            --bg-light: #f8fafc;      
+            --card-white: #ffffff;    
             
-            /* Text Colors */
-            --text-light: #f1f5f9;    /* White/Light Grey text */
-            --text-dark: #1e293b;     /* Dark Slate text */
-            --text-muted: #64748b;    /* Muted Grey text */
+            --text-light: #f1f5f9;    
+            --text-dark: #1e293b;     
+            --text-muted: #64748b;    
             
-            /* Accent Colors */
-            --accent: #2563eb;        /* Royal Blue (Primary Action) */
-            --accent-hover: #1d4ed8;  /* Darker Blue (Hover) */
-            --highlight-success: #10b981; /* Green for Employed Status */
+            --accent: #2563eb;        
+            --accent-hover: #1d4ed8;  
+            --highlight-success: #10b981; 
+            --highlight-warning: #fbbf24;
             
-            /* Borders */
-            --border-color: #e2e8f0;  /* Light Border */
+            --border-color: #e2e8f0;
         }
 
         /* --- GLOBAL RESET --- */
@@ -121,7 +118,6 @@
             justify-content: space-between; gap: 3rem; min-height: 90vh;
             position: relative; overflow: hidden;
         }
-        /* Geometric Pattern Background */
         .hero::before {
             content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
@@ -130,33 +126,26 @@
 
         .hero-text { flex: 1; max-width: 700px; z-index: 1; }
         .hero h1 { font-size: 3rem; line-height: 1.1; font-weight: 800; margin-bottom: 1.5rem; letter-spacing: -1px; color: #fff; }
-        .hero h1 span { color: #60a5fa; /* Light Blue for contrast on dark bg */ }
+        .hero h1 span { color: #60a5fa; }
         
         .hero-intro { font-size: 1.15rem; color: #cbd5e1; margin-bottom: 2rem; font-weight: 400; line-height: 1.6; }
         
         .hero-highlights { display: flex; flex-direction: column; gap: 12px; margin-bottom: 2.5rem; }
         
         .highlight-item { display: flex; align-items: center; gap: 12px; font-weight: 500; font-size: 1.05rem; color: #e2e8f0; }
-        .highlight-item i { color: #60a5fa; } /* Light Blue Icons */
+        .highlight-item i { color: #60a5fa; }
 
-        /* Job Status Alert */
-        .job-alert {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(16, 185, 129, 0.15); /* Green Tint */
-            color: var(--highlight-success);
-            padding: 8px 16px;
-            border-radius: 8px;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            font-weight: 600;
+        /* Visa & Job Alerts */
+        .visa-alert {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: rgba(251, 191, 36, 0.15); color: #fbbf24;
+            padding: 8px 16px; border-radius: 8px; border: 1px solid rgba(251, 191, 36, 0.3); font-weight: 600;
         }
 
         .btn-container { display: flex; gap: 15px; flex-wrap: wrap; }
 
         .hero-img-container { flex: 1; display: flex; justify-content: center; z-index: 1; }
         
-        /* IMAGE SIZE UPDATED HERE */
         .profile-img {
             width: 320px; height: 320px; border-radius: 20px; object-fit: cover;
             border: 4px solid rgba(255,255,255,0.1); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
@@ -178,7 +167,6 @@
         }
         .card:hover, .skill-box:hover, .why-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border-color: #cbd5e1; }
 
-        /* Specific Card Styles */
         .skill-box h4 { font-size: 1rem; margin-bottom: 1rem; color: var(--text-dark); border-bottom: 2px solid #f1f5f9; padding-bottom: 5px; font-weight: 700; }
         .skill-list, .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; }
         .skill-tag, .tag { background: #eff6ff; color: #1e40af; padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; border: 1px solid #dbeafe; }
@@ -276,10 +264,7 @@
             .btn-container { flex-direction: column; width: 100%; }
             .btn, .btn-outline-light { width: 100%; text-align: center; }
             .hero-img-container { width: 100%; }
-            
-            /* IMAGE SIZE UPDATED FOR MOBILE HERE */
             .profile-img { width: 250px; height: 250px; }
-            
             .section { padding: 4rem 5%; }
             .split-section { grid-template-columns: 1fr; gap: 2rem; }
             .cert-img { width: 100%; }
@@ -301,11 +286,12 @@
             <li><a href="#about" onclick="closeMenu()">About</a></li>
             <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
             <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+            <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
             <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-            <li><a href="#contact" onclick="closeMenu()" class="btn nav-btn" style="padding:10px; margin-top:5px; color:#fff;">Download CV</a></li>
+            <li><a href="#contact" onclick="closeMenu()" class="btn nav-btn" style="padding:10px; margin-top:5px; color:#fff;">Download CVs</a></li>
         </ul>
         
-        <a href="#contact" class="btn" style="padding: 8px 20px; font-size: 0.9rem; display: none;">Download CV</a>
+        <a href="#contact" class="btn" style="padding: 8px 20px; font-size: 0.9rem; display: none;">Download CVs</a>
         <style> @media(min-width: 969px) { .navbar > .btn { display: inline-block !important; } .nav-links .nav-btn { display: none !important; } } </style>
     </nav>
 
@@ -314,19 +300,23 @@
             <h1>Hi, I'm <span style="color:#60a5fa">Mohammad Rizwan</span></h1>
             
             <h2 style="font-size: 1.8rem; margin-bottom:1rem; color:#e2e8f0; font-weight:700; line-height: 1.4;">
-                IT Support & Technical Support Executive
+                IT Support Executive & Software Developer
             </h2>
             
             <p class="hero-intro">
-                A dedicated IT professional currently working in Dubai, with expertise in technical troubleshooting, hardware/software maintenance, and ensuring seamless daily operations.
+                A dedicated IT professional and developer currently in Dubai. Expertise in technical troubleshooting, system administration, and building scalable MERN applications. Actively looking for new opportunities.
             </p>
             
             <div class="hero-highlights">
-                <div class="highlight-item"><i class="fas fa-map-marker-alt"></i> Based in UAE | Working in Dubai</div>
+                <div class="highlight-item"><i class="fas fa-map-marker-alt"></i> Currently in Dubai, UAE</div>
                 
-                <div class="job-alert">
-                    <i class="fas fa-briefcase"></i> 
-                    Currently Employed in IT Support
+                <div class="visa-alert">
+                    <i class="fas fa-passport"></i> 
+                    Visit Visa Status: Expires 3rd April
+                </div>
+
+                <div class="highlight-item" style="color: #4ade80; font-weight: 700;">
+                    <i class="fas fa-bolt"></i> Immediate Joiner | Actively Job Searching
                 </div>
             </div>
 
@@ -355,25 +345,25 @@
             <span class="section-label">About Me</span>
             <h2 class="section-title">Professional Profile</h2>
             <p style="max-width: 700px; margin-top: 1rem; color: #64748b;">
-                As an active IT Support professional in Dubai, I specialize in maintaining robust IT infrastructure and providing practical technical solutions. My focus is on resolving issues quickly to minimize downtime and ensure smooth business operations.
+                I am an adaptable tech professional bridging the gap between Software Development and IT Support. I specialize in building responsive web applications using the MERN stack while also possessing strong capabilities in maintaining IT infrastructure and troubleshooting systems.
             </p>
         </div>
 
         <div class="why-hire-grid">
             <div class="why-card">
                 <i class="fas fa-briefcase"></i>
-                <h4>Current Role</h4>
-                <p>Actively managing daily IT operations and technical support for a company in Dubai.</p>
+                <h4>Immediate Availability</h4>
+                <p>Actively seeking IT Support or Full Stack Developer roles in Dubai. Ready to join immediately.</p>
+            </div>
+            <div class="why-card">
+                <i class="fas fa-laptop-code"></i>
+                <h4>Full Stack Skills</h4>
+                <p>Strong foundation in React, Node.js, MongoDB, and building RESTful APIs.</p>
             </div>
             <div class="why-card">
                 <i class="fas fa-tools"></i>
-                <h4>Technical Expertise</h4>
+                <h4>IT Support Expertise</h4>
                 <p>Proficient in hardware troubleshooting, OS configuration, and network management.</p>
-            </div>
-            <div class="why-card">
-                <i class="fas fa-bolt"></i>
-                <h4>Quick Resolution</h4>
-                <p>Focused on diagnosing and resolving hardware and software issues efficiently.</p>
             </div>
             <div class="why-card">
                 <i class="fas fa-comments"></i>
@@ -389,6 +379,45 @@
             <h2 class="section-title">IT Skills & Technologies</h2>
         </div>
 
+        <h3 style="margin-bottom: 1.5rem; font-size: 1.3rem; font-weight: 700; color: var(--text-dark); border-left: 5px solid var(--accent); padding-left: 15px;">
+            Software Development (MERN Stack)
+        </h3>
+        <div class="skills-container" style="margin-bottom: 3rem;">
+            <div class="skill-box">
+                <h4><i class="fas fa-code" style="color:var(--accent)"></i> Frontend</h4>
+                <div class="skill-list">
+                    <span class="skill-tag">React.js</span>
+                    <span class="skill-tag">HTML5 / CSS3</span>
+                    <span class="skill-tag">Tailwind CSS</span>
+                    <span class="skill-tag">Bootstrap</span>
+                    <span class="skill-tag">Responsive Design</span>
+                </div>
+            </div>
+            <div class="skill-box">
+                <h4><i class="fas fa-server" style="color:var(--accent)"></i> Backend & Database</h4>
+                <div class="skill-list">
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Express.js</span>
+                    <span class="skill-tag">MongoDB / Atlas</span>
+                    <span class="skill-tag">REST APIs</span>
+                    <span class="skill-tag">JWT Auth</span>
+                </div>
+            </div>
+            <div class="skill-box">
+                <h4><i class="fas fa-tools" style="color:var(--accent)"></i> Core & Tools</h4>
+                <div class="skill-list">
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Data Structures</span>
+                    <span class="skill-tag">Git & GitHub</span>
+                    <span class="skill-tag">Postman</span>
+                    <span class="skill-tag">JSON</span>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="margin-bottom: 1.5rem; font-size: 1.3rem; font-weight: 700; color: var(--text-dark); border-left: 5px solid var(--highlight-success); padding-left: 15px;">
+            IT Support & Administration
+        </h3>
         <div class="skills-container">
             <div class="skill-box">
                 <h4><i class="fas fa-desktop" style="color:var(--accent)"></i> OS & Hardware Support</h4>
@@ -396,7 +425,7 @@
                     <span class="skill-tag">Windows 10/11 Config</span>
                     <span class="skill-tag">PC/Laptop Troubleshooting</span>
                     <span class="skill-tag">RAM/SSD Replacement</span>
-                    <span class="skill-tag">Printer & Scanner Setup</span>
+                    <span class="skill-tag">Printer Setup</span>
                 </div>
             </div>
             <div class="skill-box">
@@ -409,12 +438,12 @@
                 </div>
             </div>
             <div class="skill-box">
-                <h4><i class="fas fa-tools" style="color:var(--accent)"></i> Troubleshooting & Tools</h4>
+                <h4><i class="fas fa-headset" style="color:var(--accent)"></i> Administration Tools</h4>
                 <div class="skill-list">
                     <span class="skill-tag">Remote Support Tools</span>
                     <span class="skill-tag">Software Installation</span>
                     <span class="skill-tag">System Backup</span>
-                    <span class="skill-tag">Technical Documentation</span>
+                    <span class="skill-tag">MS Office Suite</span>
                 </div>
             </div>
         </div>
@@ -424,20 +453,21 @@
         <div class="section-header">
             <span class="section-label">Portfolio</span>
             <h2 class="section-title">Technical Projects</h2>
-            <p style="color:#64748b">Technical Background & Project Based Learning</p>
+            <p style="color:#64748b">Project Based Learning & Development</p>
         </div>
 
         <div class="grid-container">
+
             <div class="card">
                 <div class="card-header-row">
-                    <div class="card-icon" style="margin-bottom:0.5rem;"><i class="fas fa-sticky-note"></i></div>
-                    <span class="year-badge">2026</span>
+                    <div class="card-icon" style="margin-bottom:0.5rem;"><i class="fas fa-hotel"></i></div>
+                    <span class="year-badge">2024</span>
                 </div>
-                <h3>Notezy (Tech Support Tool)</h3>
-                <span class="role-tag">MERN Stack Notes Application</span>
+                <h3>Hotel Listing App</h3>
+                <span class="role-tag">Full Stack Project | Node.js, MongoDB</span>
                 <ul class="feature-list">
-                    <li>Developed a MERN-based notes application to manage technical details, repair notes, and maintenance records.</li>
-                    <li>Designed the app for an auto electrician use case to store service history and diagnostic details.</li>
+                    <li>Developed a hotel listing web application with property details and image uploads.</li>
+                    <li>Built backend APIs using Node.js and managed data storage with MongoDB.</li>
                 </ul>
                 <a href="https://github.com/MoRizwanAMU" target="_blank" class="card-link">View Code <i class="fas fa-arrow-right"></i></a>
             </div>
@@ -448,12 +478,78 @@
                     <span class="year-badge">2025</span>
                 </div>
                 <h3>Portfolio Website</h3>
-                <span class="role-tag">Personal Project</span>
+                <span class="role-tag">Frontend Development</span>
                 <ul class="feature-list">
                     <li>Designed and deployed a responsive personal portfolio website to showcase technical skills and professional experience.</li>
-                    <li>Managed hosting, domain configuration, and continuous updates.</li>
+                    <li>Implemented modern UI using React, HTML5/CSS3, Tailwind CSS, and Bootstrap.</li>
                 </ul>
                 <a href="https://github.com/MoRizwanAMU" target="_blank" class="card-link">View Code <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section" style="background-color: #fff;">
+        <div class="section-header">
+            <span class="section-label">Career Path</span>
+            <h2 class="section-title">Work Experience</h2>
+        </div>
+
+        <div class="grid-container">
+            <div class="card">
+                <div class="card-header-row">
+                    <div class="card-icon" style="margin-bottom:0.5rem;"><i class="fas fa-briefcase"></i></div>
+                    <span class="year-badge">2024</span>
+                </div>
+                <h3>Frontend Dev Intern</h3>
+                <span class="role-tag">CodeSoft | Remote</span>
+                <ul class="feature-list">
+                    <li>Developed multiple frontend projects including a calculator, landing page, and personal portfolio using HTML, CSS, and JavaScript.</li>
+                    <li>Implemented responsive layouts and improved UI structure across different screen sizes.</li>
+                    <li>Practiced version control and project management using Git and GitHub.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="certs" class="section">
+        <div class="section-header">
+            <span class="section-label">Credentials</span>
+            <h2 class="section-title">Certifications</h2>
+        </div>
+
+        <div class="grid-container">
+            <div class="card">
+                <h3>React Mastery</h3>
+                <span class="role-tag" style="color:#64748b">Codprog | Dec 2025</span>
+                <div class="cert-img-wrapper">
+                    <img src="react-cert.png" alt="React Cert" class="cert-img">
+                </div>
+                <div class="btn-row">
+                    <a href="react-cert.png" target="_blank" class="btn-small"><i class="fas fa-eye"></i> View</a>
+                    <a href="ReactMastery-certificate-RXL9dprrQ1ekRbuH5VyfZw.pdf" download class="btn-small"><i class="fas fa-download"></i> PDF</a>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Full Stack Web Dev</h3>
+                <span class="role-tag" style="color:#64748b">Apna College | Jul 2025</span>
+                <div class="cert-img-wrapper">
+                    <img src="fullstack-cert.png" alt="Full Stack Cert" class="cert-img">
+                </div>
+                <div class="btn-row">
+                    <a href="fullstack-cert.png" target="_blank" class="btn-small"><i class="fas fa-eye"></i> View</a>
+                    <a href="certificate-sigma-5-development-68371e0f1357f669e5041882.pdf" download class="btn-small"><i class="fas fa-download"></i> PDF</a>
+                </div>
+            </div>
+            <div class="card">
+                <h3>DSA with Java</h3>
+                <span class="role-tag" style="color:#64748b">Apna College | Jan 2025</span>
+                <div class="cert-img-wrapper">
+                    <img src="dsa-cert.png" alt="DSA Cert" class="cert-img">
+                </div>
+                <div class="btn-row">
+                    <a href="dsa-cert.png" target="_blank" class="btn-small"><i class="fas fa-eye"></i> View</a>
+                    <a href="certificate-sigma-50-672b17223c33c36b830d9022 (2).pdf" download class="btn-small"><i class="fas fa-download"></i> PDF</a>
+                </div>
             </div>
         </div>
     </section>
@@ -469,7 +565,7 @@
                 <div class="edu-item">
                     <h4>Master of Computer Applications (MCA) — Coursework Completed</h4>
                     <span>Aligarh Muslim University | 2023 – 2025</span>
-                    <p>Focus on IT Infrastructure, System Administration, and Programming.</p>
+                    <p>Focus on Software Development, Programming, and IT Infrastructure.</p>
                 </div>
                 
                 <div class="edu-item">
@@ -505,7 +601,7 @@
                     <i class="fas fa-map-marker-alt"></i>
                     <div>
                         <h5>Location</h5>
-                        <span style="font-weight:600; color:var(--text-dark);">Dubai, UAE</span>
+                        <span style="font-weight:600; color:var(--text-dark);">Dubai, UAE (Available for immediate joining)</span>
                     </div>
                 </div>
                 
@@ -518,8 +614,12 @@
                 </div>
                 
                 <div style="margin-top: 2rem; display: flex; flex-direction: column; align-items: center; gap: 15px;">
-                     <a href="Mohammad_Rizwan_Khan_IT_Support.pdf" download class="btn" onclick="showToast('IT Support CV Downloaded 🚀')" style="width:100%; max-width:400px; text-align:center; display:flex; align-items:center; justify-content:center; gap:10px;">
-                        Download IT Support CV
+                     <a href="full_stack%20.pdf" download class="btn" onclick="showToast('Full Stack Development Downloaded 🚀')" style="width:100%; max-width:400px; text-align:center; display:flex; align-items:center; justify-content:center; gap:10px;">
+                        <i class="fas fa-code"></i> Download Full Stack CV
+                     </a>
+                     
+                     <a href="IT%20Support.pdf" download class="btn" onclick="showToast('IT Support CV Downloaded 🚀')" style="width:100%; max-width:400px; text-align:center; display:flex; align-items:center; justify-content:center; gap:10px; background-color: var(--card-white); color: var(--accent); border: 2px solid var(--accent);">
+                        <i class="fas fa-headset"></i> Download IT Support CV
                      </a>
                 </div>
                 
